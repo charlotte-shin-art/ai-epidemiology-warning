@@ -144,8 +144,9 @@ class HardcodedScaler:
         return X * self.scale_ + self.min_
 
 @st.cache_resource
-def load_scaler():
+def load_scaler_v2():
     return HardcodedScaler()
+
 
 def prepare_features(df):
     df_encoded = pd.get_dummies(df, columns=['HSE_Region'], prefix='Region')
@@ -173,7 +174,7 @@ st.markdown("<hr style='margin-top: 10px; margin-bottom: 20px;'>", unsafe_allow_
 
 df_raw = load_data()
 df_encoded, feature_cols, region_cols = prepare_features(df_raw)
-scaler = load_scaler()
+scaler = load_scaler_v2()
 geojson_data = load_geojson()
 
 DISEASES = ['Cryptosporidiosis', 'Giardiasis', 'Salmonellosis', 'Shigellosis', 'Verotoxigenic Escherichia coli infection']
