@@ -4,5 +4,3 @@ numpy
 torch
 folium
 streamlit-folium
-scikit-learn==1.6.1
-joblib

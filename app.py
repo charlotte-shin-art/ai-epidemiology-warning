@@ -6,7 +6,7 @@ import torch.nn as nn
 import folium
 from streamlit_folium import st_folium
 import json
-import joblib
+# joblib removed - using HardcodedScaler instead
 from pathlib import Path
 import datetime
 
@@ -106,7 +106,7 @@ BASE_DIR = Path(__file__).resolve().parent
 DATA_FILE = BASE_DIR / "secondary_data" / "model_input" / "feature_matrix_hse.csv"
 GEOJSON_FILE = BASE_DIR / "secondary_data" / "spatial" / "hse_regions.geojson"
 MODEL_PATH = BASE_DIR / "secondary_data" / "models" / "gru_best.pt"
-SCALER_PATH = BASE_DIR / "secondary_data" / "models" / "scaler.pkl"
+# SCALER_PATH removed - using HardcodedScaler instead
 
 @st.cache_data
 def load_data():
