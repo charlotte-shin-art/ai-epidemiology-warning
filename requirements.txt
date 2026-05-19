@@ -1,7 +1,8 @@
 streamlit
 pandas
 numpy
-torch --index-url https://download.pytorch.org/whl/cpu
+torch
 folium
 streamlit-folium
+scikit-learn==1.6.1
 joblib
