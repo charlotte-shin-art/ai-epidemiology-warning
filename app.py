@@ -238,7 +238,7 @@ for region in regions:
         ratio = (base_rain + rain_delta_mm) / (base_rain + 1e-6)
         seq_df.iloc[-1, seq_df.columns.get_loc('weekly_mean_rain')] *= ratio
     
-    X_raw = seq_df[feature_cols].values
+    X_raw = seq_df[feature_cols].fillna(0).values.astype(np.float32)
     X_scaled = scaler.transform(X_raw)
     X_tensor = torch.tensor(X_scaled, dtype=torch.float32).unsqueeze(0)
     
